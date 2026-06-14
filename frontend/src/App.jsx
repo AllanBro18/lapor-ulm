@@ -21,7 +21,7 @@ import {
   Building,
   HelpCircle
 } from 'lucide-react';
-import { getProvider, getContract } from './blockchain';
+import { getProvider, getContract, CONTRACT_ADDRESS } from './blockchain';
 import { ethers } from 'ethers';
 
 const STATUS_MAP = {
@@ -526,10 +526,10 @@ function App() {
                     <span className="text-sm font-black uppercase block mb-2">Alamat Kontrak FacilityReport</span>
                     <div className="flex items-center justify-between gap-4 bg-white border-4 border-black p-3">
                       <span className="text-lg font-bold font-mono truncate select-all">
-                        0x5FbDB2315678afecb367f032d93F642f64180aa3
+                        {CONTRACT_ADDRESS}
                       </span>
                       <button 
-                        onClick={() => copyToClipboard('0x5FbDB2315678afecb367f032d93F642f64180aa3')}
+                        onClick={() => copyToClipboard(CONTRACT_ADDRESS)}
                         className="neo-btn bg-black text-white px-4 py-2"
                       >
                         {copied ? <Check className="h-5 w-5 text-neo-green" strokeWidth={3} /> : <Copy className="h-5 w-5" strokeWidth={2.5} />}
